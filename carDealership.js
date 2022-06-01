@@ -1,3 +1,5 @@
+"use strict";
+
 const Car = function (manufacturer, price, engineType) {
     
     let _manufacturer = manufacturer;
@@ -6,13 +8,17 @@ const Car = function (manufacturer, price, engineType) {
 
     // Most verbose way of writing an anonymous function
     this.getManufacturer = function(){
-        return manufacturer;
+        return _manufacturer;
     }
     // Anoymous function with syntatic sugar from ES6
     this.getPrice = () => {
-        return price;
+        return _price;
     }
     // Anonymous function fully abbreviated
-    this.getEngineType = () => engineType;
-    
+    this.getEngineType = () => _engineType;
+    module.exports = {getEngineType, car1};
 }
+
+const car1 = new Car("Ford", 200000, "V-8");
+
+module.exports = {getEngineType, car1};
