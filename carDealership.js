@@ -15,5 +15,4 @@ const Car = function (manufacturer, price, engineType) {
     // Anonymous function fully abbreviated
     this.getEngineType = () => engineType;
     
-
 }
