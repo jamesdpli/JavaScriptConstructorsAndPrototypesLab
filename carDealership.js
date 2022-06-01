@@ -20,5 +20,6 @@ const Car = function (manufacturer, price, engineType) {
 }
 
 const car1 = new Car("Ford", 200000, "V-8");
+console.log("car1 engine type:", car1.getEngineType());
 
-module.exports = {getEngineType, car1};
+
