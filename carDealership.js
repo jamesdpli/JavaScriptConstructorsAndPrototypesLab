@@ -33,25 +33,32 @@ const Dealership = function (title, maximumNumberOfCars, carsInStock) {
     let _maximumNumberOfCars = maximumNumberOfCars;
     let _carsInStock = carsInStock;
 
-    this.getTitle = () => title;
-    this.getMaximumNumberOfCars = () => maximumNumberOfCars;
-    this.carsInStock = () => carsInStock;
+    this.getTitle = () => _title;
+    this.getMaximumNumberOfCars = () => _maximumNumberOfCars;
+    this.carsInStock = () => _carsInStock;
 
     this.countNumberOfCarsInStock = () => carsInStock.length;
     this.addCarToStock = function (manufacturer, price, engineType) {
         carsInStock.push(new Car(manufacturer, price, engineType));
     }
+    const filtered = carsInStock.filter(function(car){return car.manufacturer})
     this.getAllCarManufacturers = function () {
+        return filtered
     }
+    
 }
 
 // New up some dealerships
 const dealership1 = new Dealership("Jimmy's Best Cars", 20, [car1, car2, car7, car5]);
 
-console.log(dealership1.countNumberOfCarsInStock());
-dealership1.addCarToStock("Su", 10, "su");
-console.log(dealership1.countNumberOfCarsInStock());
+// console.log(dealership1.countNumberOfCarsInStock());
+
+// dealership1.addCarToStock("Su", 10, "su");
+
+// console.log(dealership1.countNumberOfCarsInStock());
+
 console.log(dealership1.carsInStock());
+
 console.log(dealership1.getAllCarManufacturers());
 
 module.exports = {car1, car2, car3, car4, car5, car6, car7}
