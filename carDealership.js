@@ -39,10 +39,9 @@ const Dealership = function (title, maximumNumberOfCars, carsInStock) {
 
     this.countNumberOfCarsInStock = () => carsInStock.length;
     this.addCarToStock = function (manufacturer, price, engineType) {
-        dealership1.carsInStock().push(new Car(manufacturer, price, engineType));
+        carsInStock.push(new Car(manufacturer, price, engineType));
     }
     this.getAllCarManufacturers = function () {
-        
     }
 }
 
