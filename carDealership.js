@@ -41,7 +41,13 @@ const Dealership = function (title, maximumNumberOfCars, carsInStock) {
     this.addCarToStock = function (manufacturer, price, engineType) {
         carsInStock.push(new Car(manufacturer, price, engineType));
     }
-    const filtered = carsInStock.filter(function(car){return car.manufacturer})
+    
+    const carsInStockManufacturers = function(car) {
+        return car.manufacturer;
+    }
+
+    const filtered = carsInStock.filter(carsInStockManufacturers);
+    
     this.getAllCarManufacturers = function () {
         return filtered
     }
